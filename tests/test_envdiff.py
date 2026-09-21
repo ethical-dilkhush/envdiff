@@ -27,8 +27,8 @@ def test_diff_envs_report_changes() -> None:
 def test_diff_envs_no_changes_returns_zero_exit_code() -> None:
     rc = envdiff.main(
         [
-            tests/fixtures/old.env",
-            tests/fixtures/old.env",
+            "tests/fixtures/old.env",
+            "tests/fixtures/old.env",
             "--no-color",
         ],
         stdout=io.StringIO(),
@@ -40,8 +40,8 @@ def test_main_reports_difference_exit_code_and_plain_output() -> None:
     stdout = io.StringIO()
     rc = envdiff.main(
         [
-            tests/fixtures/old.env",
-            tests/fixtures/new.env",
+            "tests/fixtures/old.env",
+            "tests/fixtures/new.env",
             "--no-color",
         ],
         stdout=stdout,
@@ -57,8 +57,8 @@ def test_main_markdown_format_contains_tables() -> None:
     stdout = io.StringIO()
     envdiff.main(
         [
-            tests/fixtures/old.env",
-            tests/fixtures/new.env",
+            "tests/fixtures/old.env",
+            "tests/fixtures/new.env",
             "--format", "markdown",
         ],
         stdout=stdout,
@@ -72,8 +72,8 @@ def test_main_json_format_parses_as_json() -> None:
     stdout = io.StringIO()
     rc = envdiff.main(
         [
-            tests/fixtures/old.env",
-            tests/fixtures/new.env",
+            "tests/fixtures/old.env",
+            "tests/fixtures/new.env",
             "--format", "json",
         ],
         stdout=stdout,
@@ -86,8 +86,8 @@ def test_main_json_format_parses_as_json() -> None:
 def test_main_missing_file_returns_two() -> None:
     rc = envdiff.main(
         [
-            tests/fixtures/missing.env",
-            tests/fixtures/new.env",
+            "tests/fixtures/missing.env",
+            "tests/fixtures/new.env",
         ],
         stdout=io.StringIO(),
     )
@@ -98,8 +98,8 @@ def test_only_added_filters_output() -> None:
     stdout = io.StringIO()
     envdiff.main(
         [
-            tests/fixtures/old.env",
-            tests/fixtures/new.env",
+            "tests/fixtures/old.env",
+            "tests/fixtures/new.env",
             "--only", "added",
             "--no-color",
         ],
@@ -115,8 +115,8 @@ def test_no_color_strips_ansi() -> None:
     stdout = io.StringIO()
     envdiff.main(
         [
-            tests/fixtures/old.env",
-            tests/fixtures/new.env",
+            "tests/fixtures/old.env",
+            "tests/fixtures/new.env",
             "--no-color",
         ],
         stdout=stdout,
