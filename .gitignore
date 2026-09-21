@@ -1,0 +1,12 @@
+envdiff
+.envdiff*
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.env
+.env.*
+AGENTS.md
+CLAUDE.md
+.DS_Store
+envdiff.egg-info/
